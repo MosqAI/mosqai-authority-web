@@ -8,7 +8,7 @@ offline), alerts and faults, AI evidence, and reports.
 Privacy by default: users see device IDs and aggregated area data, not owner
 identities, unless their role allows it.
 
-Primary owner: Developer 1.
+Owner: `@MosqAI/core` team (RavynX0, Hope664).
 
 ## Technology
 
