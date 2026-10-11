@@ -25,3 +25,12 @@ secrets/
 out/
 next-env.d.ts
 .vercel
+
+# Next.js / TypeScript extras
+/.pnp
+.pnp.*
+*.tsbuildinfo
+.pnpm-debug.log*
+
+# Copied from node_modules by scripts/copy-maplibre-worker.mjs
+/public/maplibre/
