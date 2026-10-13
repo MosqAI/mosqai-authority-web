@@ -2,8 +2,9 @@ import { ArrowLeft, BatteryMedium, Clock, Map, MapPin, ScanLine, Settings } from
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge, deviceStatusTone } from "@/components/ui/badge";
-import { Button, ButtonLink } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { UnderDevelopmentButton } from "@/components/ui/under-development";
 import { PageContainer } from "@/components/ui/page-header";
 import { fmt } from "@/i18n/config";
 import { getI18n } from "@/i18n/server";
@@ -84,9 +85,9 @@ export default async function DeviceDetailsPage({ params }: PageProps<"/devices/
             <ButtonLink href={`/map?device=${device.id}`} className="py-3 text-sm">
               <Map className="size-4" aria-hidden /> {t.devices.viewOnMap}
             </ButtonLink>
-            <Button variant="secondary" className="py-3 text-sm" title={t.common.needsBackend} disabled>
+            <UnderDevelopmentButton variant="secondary" className="py-3 text-sm">
               <Settings className="size-4" aria-hidden /> {t.devices.maintenance}
-            </Button>
+            </UnderDevelopmentButton>
           </div>
         </Card>
 

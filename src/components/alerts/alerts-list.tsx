@@ -3,6 +3,7 @@
 import { Check, MapPin, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 import { Badge, severityTone } from "@/components/ui/badge";
+import { UnderDevelopmentButton } from "@/components/ui/under-development";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { PageHeader } from "@/components/ui/page-header";
@@ -47,9 +48,9 @@ export function AlertsList({ alerts: initial }: { alerts: Alert[] }) {
             >
               <Check className="size-4" aria-hidden /> {t.alerts.markAllRead}
             </Button>
-            <Button variant="dark" title={t.common.needsBackend} disabled>
+            <UnderDevelopmentButton variant="dark">
               <SlidersHorizontal className="size-4" aria-hidden /> {t.alerts.configureRules}
-            </Button>
+            </UnderDevelopmentButton>
           </>
         }
       />

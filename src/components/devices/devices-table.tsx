@@ -7,6 +7,7 @@ import { Badge, deviceStatusTone } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { SearchField, Select } from "@/components/ui/fields";
 import { Pagination, paginate } from "@/components/ui/pagination";
+import { UnderDevelopmentButton } from "@/components/ui/under-development";
 import { dictionaries, fmt } from "@/i18n/config";
 import { useI18n } from "@/i18n/client";
 import type { Area, Device, DeviceStatus, DeviceType } from "@/lib/types";
@@ -133,15 +134,9 @@ export function DevicesTable({
                       <Link href={`/devices/${d.id}`} aria-label={fmt(t.devices.edit, { id: d.id })} className="hover:text-ink">
                         <Pencil className="size-4" />
                       </Link>
-                      <button
-                        type="button"
-                        aria-label={fmt(t.devices.remove, { id: d.id })}
-                        title={t.common.needsBackend}
-                        disabled
-                        className="disabled:cursor-not-allowed"
-                      >
+                      <UnderDevelopmentButton plain aria-label={fmt(t.devices.remove, { id: d.id })} className="hover:text-ink">
                         <Trash2 className="size-4" />
-                      </button>
+                      </UnderDevelopmentButton>
                     </div>
                   </td>
                 </tr>
