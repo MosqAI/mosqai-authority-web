@@ -11,7 +11,7 @@ import { useI18n } from "@/i18n/client";
 import type { Area, DeviceType } from "@/lib/types";
 
 const inputClass =
-  "w-full rounded-2xl border border-glass-border bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:ring-2 focus:ring-accent/30 focus:outline-none";
+  "w-full rounded-lg border border-glass-border bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:ring-2 focus:ring-accent/30 focus:outline-none";
 
 /** Register a trap; shows the one-time pairing code the owner types into the mobile app. */
 export function AddDeviceDialog({ areas, initialOpen = false }: { areas: Area[]; initialOpen?: boolean }) {
@@ -75,7 +75,7 @@ export function AddDeviceDialog({ areas, initialOpen = false }: { areas: Area[];
           <h2 id="add-device-title" className="text-lg font-bold">
             {result ? fmt(t.devices.successTitle, { id: result.id }) : t.devices.addTitle}
           </h2>
-          <button type="button" onClick={close} aria-label={t.devices.cancel} className="rounded-full p-1.5 text-ink-faint hover:bg-white hover:text-ink">
+          <button type="button" onClick={close} aria-label={t.devices.cancel} className="rounded-lg p-1.5 text-ink-faint hover:bg-slate-100 hover:text-ink">
             <X className="size-5" />
           </button>
         </div>

@@ -76,7 +76,7 @@ function Sidebar({
               href={href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
-              className={`flex items-center gap-3 rounded-2xl px-3.5 py-2.5 text-sm transition ${
+              className={`flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm transition ${
                 active
                   ? "bg-accent-soft font-semibold text-accent-strong"
                   : "font-medium text-ink-soft hover:bg-accent-soft/60 hover:text-ink"
@@ -84,11 +84,8 @@ function Sidebar({
             >
               <Icon className="size-[18px] shrink-0" aria-hidden />
               <span className="flex-1">{t.nav[key]}</span>
-              {href === "/alerts" && openAlerts > 0 && (
-                <span className="flex size-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">
-                  {openAlerts}
-                </span>
-              )}
+              {/* A dot, not a number: open alerts are signalled, counted on the alerts page */}
+              {href === "/alerts" && openAlerts > 0 && <span className="size-2 rounded-full bg-rose-500" aria-hidden />}
             </Link>
           );
         })}
@@ -101,7 +98,7 @@ function Sidebar({
         <Link
           href="/analytics"
           onClick={onNavigate}
-          className="relative mt-3 inline-flex rounded-full bg-white px-4 py-2 text-xs font-semibold text-brand-deep transition hover:bg-lavender"
+          className="relative mt-3 inline-flex rounded-lg bg-white px-4 py-2 text-xs font-semibold text-brand-deep transition hover:bg-lavender"
         >
           {t.nav.promoCta}
         </Link>
@@ -155,8 +152,8 @@ function TopBar({ user, openAlerts, onMenu }: { user: SessionUser; openAlerts: n
           {openAlerts > 0 && <span className="absolute top-2.5 right-3 size-2 rounded-full bg-rose-500 ring-2 ring-white" />}
         </Link>
         <details className="group relative">
-          <summary className="flex cursor-pointer list-none items-center gap-2.5 rounded-full border border-glass-border bg-white py-1 pr-3 pl-1 [&::-webkit-details-marker]:hidden">
-            <span className="flex size-8 items-center justify-center rounded-full bg-lavender text-xs font-semibold text-accent-strong">{initials(user.name)}</span>
+          <summary className="flex cursor-pointer list-none items-center gap-2.5 rounded-lg border border-glass-border bg-white py-1 pr-3 pl-1 [&::-webkit-details-marker]:hidden">
+            <span className="flex size-8 items-center justify-center rounded-md bg-lavender text-xs font-semibold text-accent-strong">{initials(user.name)}</span>
             <span className="hidden md:block">
               <span className="block text-sm leading-tight font-medium text-ink">{user.name}</span>
               <span className="block text-[11px] text-ink-faint">{t.enums.role[user.role]}</span>
@@ -206,7 +203,7 @@ export function AppShell({ user, openAlerts, children }: { user: SessionUser; op
             type="button"
             onClick={() => setMenuOpen(false)}
             aria-label={t.common.closeMenu}
-            className="absolute top-5 right-5 flex size-10 items-center justify-center rounded-full bg-white text-ink shadow-lg"
+            className="absolute top-5 right-5 flex size-10 items-center justify-center rounded-lg bg-white text-ink shadow-lg"
           >
             <X className="size-5" />
           </button>

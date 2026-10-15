@@ -59,7 +59,7 @@ export function FieldSchedule({ t, f, today }: { t: Dict; f: Formatters; today: 
       </ul>
       <Link
         href="/analytics"
-        className="glass-strong mt-5 flex items-center justify-center gap-2 rounded-2xl py-2.5 text-xs font-semibold text-ink transition hover:bg-white"
+        className="glass-strong mt-5 flex items-center justify-center gap-2 rounded-lg py-2.5 text-xs font-semibold text-ink transition hover:bg-white"
       >
         {t.dashboard.viewAllEvents} <ArrowRight className="size-3.5" aria-hidden />
       </Link>

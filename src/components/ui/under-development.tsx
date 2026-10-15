@@ -31,7 +31,7 @@ export function UnderDevelopmentButton({
         className="m-auto w-[min(92vw,24rem)] rounded-[1.75rem] border border-white bg-white p-0 text-ink shadow-2xl backdrop:bg-slate-900/45 backdrop:backdrop-blur-md"
       >
         <div className="flex flex-col items-center gap-3 p-6 text-center">
-          <span className="flex size-12 items-center justify-center rounded-full bg-amber-50 text-amber-700">
+          <span className="flex size-12 items-center justify-center rounded-xl bg-amber-50 text-amber-700">
             <Wrench className="size-5" aria-hidden />
           </span>
           <h2 id={titleId} className="text-lg font-bold">

@@ -33,7 +33,7 @@ export function SettingsForm({ user }: { user: SessionUser }) {
                 aria-checked={active}
                 disabled={pending}
                 onClick={() => !active && change(l)}
-                className={`flex items-center gap-3 rounded-2xl p-4 text-left transition ${
+                className={`flex items-center gap-3 rounded-lg p-4 text-left transition ${
                   active ? "bg-white ring-2 ring-accent" : "glass-strong hover:bg-white"
                 }`}
               >

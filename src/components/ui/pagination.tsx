@@ -43,7 +43,7 @@ export function Pagination({
   const from = total === 0 ? 0 : (page - 1) * PAGE_SIZE + 1;
   const to = Math.min(page * PAGE_SIZE, total);
   const btn =
-    "flex size-8 items-center justify-center rounded-full text-xs font-semibold text-ink-soft transition hover:bg-accent-soft/60 disabled:pointer-events-none disabled:opacity-40";
+    "flex size-8 items-center justify-center rounded-lg text-xs font-semibold text-ink-soft transition hover:bg-accent-soft/60 disabled:pointer-events-none disabled:opacity-40";
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/60 px-6 py-3.5">

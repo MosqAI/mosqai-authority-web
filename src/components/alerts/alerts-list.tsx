@@ -64,12 +64,12 @@ export function AlertsList({ alerts: initial }: { alerts: Alert[] }) {
               role="tab"
               aria-selected={active}
               onClick={() => setFilter(id)}
-              className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold transition ${
+              className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-semibold transition ${
                 active ? "bg-accent text-white" : "glass-strong text-ink-soft hover:text-ink"
               }`}
             >
               {dot && <span className={`size-2 rounded-full ${dot}`} />}
-              {id === "ALL" ? t.common.all : t.enums.severity[id]} ({alerts.filter((a) => matches(a, id)).length})
+              {id === "ALL" ? t.common.all : t.enums.severity[id]}
             </button>
           );
         })}

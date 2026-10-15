@@ -13,7 +13,7 @@ export function SearchField({
       <Search className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-ink-faint" />
       <input
         type="search"
-        className="glass-strong w-full rounded-2xl py-2.5 pr-14 pl-11 text-sm text-ink placeholder:text-ink-faint focus:ring-2 focus:ring-accent/30 focus:outline-none"
+        className="glass-strong w-full rounded-lg py-2.5 pr-14 pl-11 text-sm text-ink placeholder:text-ink-faint focus:ring-2 focus:ring-accent/30 focus:outline-none"
         {...props}
       />
       {shortcut && (
@@ -35,7 +35,7 @@ export function Select({
     <label className={`relative inline-block ${className}`}>
       <span className="sr-only">{label}</span>
       <select
-        className="glass-strong w-full appearance-none rounded-full py-2 pr-9 pl-4 text-xs font-medium text-ink focus:ring-2 focus:ring-accent/30 focus:outline-none"
+        className="glass-strong w-full appearance-none rounded-lg py-2 pr-9 pl-4 text-xs font-medium text-ink focus:ring-2 focus:ring-accent/30 focus:outline-none"
         {...props}
       >
         {children}

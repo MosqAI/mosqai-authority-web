@@ -32,7 +32,7 @@ export function LanguageSwitcher() {
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={t.common.language}
-        className="glass-strong flex h-11 items-center gap-1.5 rounded-full px-3.5 text-xs font-semibold text-ink-soft transition hover:text-ink"
+        className="glass-strong flex h-9 items-center gap-1.5 rounded-lg px-3.5 text-xs font-semibold text-ink-soft transition hover:text-ink"
       >
         <Globe className={`size-4 ${pending ? "animate-spin" : ""}`} aria-hidden />
         {locale.toUpperCase()}
@@ -49,7 +49,7 @@ export function LanguageSwitcher() {
                   setOpen(false);
                   if (l !== locale) change(l);
                 }}
-                className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm text-ink transition hover:bg-accent-soft/60"
+                className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm text-ink transition hover:bg-accent-soft/60"
               >
                 {dictionaries[l].meta.languageName}
                 {l === locale && <Check className="size-4 text-accent" aria-hidden />}
