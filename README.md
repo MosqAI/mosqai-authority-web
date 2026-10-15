@@ -12,13 +12,27 @@ Owner: `@MosqAI/core` team (RavynX0, Hope664).
 
 ## Technology
 
-Next.js · React · TypeScript · ECharts or Recharts · MapLibre GL
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Recharts · MapLibre GL · lucide icons
 
 ## Setup
 
-> Not scaffolded yet. First M4 issue: "Authority authentication".
+```bash
+pnpm install                 # also copies the MapLibre worker into public/maplibre/
+cp .env.example .env.local
+pnpm dev                     # http://localhost:3000
+```
 
-Planned: `pnpm install`, copy `.env.example` → `.env.local`, `pnpm dev`.
+Screens (from the Figma desktop frames): Dashboard `/`, Surveillance Map `/map`
+(`?device=MSQ-012` focuses a device), Reports, Alerts, Users, Devices,
+Device details `/devices/[id]`, Settings.
+
+**Data is seeded, not live.** The backend does not exist yet, so every page reads
+through [`src/lib/api.ts`](src/lib/api.ts), which returns fixtures from
+`src/lib/mock-data.ts`. Swapping those function bodies for fetches against
+`NEXT_PUBLIC_API_URL` is the only change pages need. Actions that require the
+backend (add/delete device or user, alert rules, maintenance) are disabled;
+acknowledging alerts and generating reports only change local state.
+Authentication (first M4 issue) is not implemented.
 
 ## Environment variables
 
@@ -32,7 +46,8 @@ distinctly from zero.
 
 ## Testing
 
-Vitest or Jest + Testing Library. Playwright for key flows (login, map, area report).
+`pnpm lint`, `pnpm typecheck`, `pnpm test` (Vitest + Testing Library), `pnpm build`;
+CI runs all four. Planned: Playwright for key flows (login, map, area report).
 
 ## Deployment
 
