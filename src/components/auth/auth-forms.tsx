@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { changePassword, signIn, type AuthFormState } from "@/app/auth/actions";
 import { useI18n } from "@/i18n/client";
 
@@ -21,6 +21,11 @@ function Field({ label, ...props }: { label: string } & React.ComponentProps<"in
 export function SignInForm({ next, initialError }: { next?: string; initialError?: "owner" }) {
   const { t } = useI18n();
   const [state, action, pending] = useActionState<AuthFormState, FormData>(signIn, initialError ? { error: initialError } : undefined);
+  // The free-plan backend sleeps when idle; wake it while the user is still typing.
+  useEffect(() => {
+    const api = process.env.NEXT_PUBLIC_API_URL;
+    if (api) void fetch(`${api}/health`, { mode: "no-cors" }).catch(() => {});
+  }, []);
   const message = state?.error && { invalid: t.auth.invalid, owner: t.auth.owner, unavailable: t.auth.unavailable }[state.error as "invalid" | "owner" | "unavailable"];
   return (
     <form action={action} className="flex flex-col gap-4">
